@@ -68,9 +68,9 @@ const Header = ({ navBarTitle, fullWidth }) => {
         ref={navRef}
       >
         <div className="flex items-center">
-          <Link href="/">
+          <Link href="https://www.shancn.com">
             <a className='md:text-lg text-base text-black dark:text-white' aria-label={BLOG.title}>
-              💫 {BLOG.title}
+              💫
             </a>
           </Link>
           {navBarTitle
