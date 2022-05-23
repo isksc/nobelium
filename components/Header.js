@@ -1,5 +1,7 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
+import { IoSunnyOutline, IoMoonSharp } from 'react-icons/io5'
+import { useTheme } from 'next-themes'
 import BLOG from '@/blog.config'
 import { useLocale } from '@/lib/locale'
 
@@ -37,6 +39,11 @@ const Header = ({ navBarTitle, fullWidth }) => {
   const useSticky = !BLOG.autoCollapsedNavBar
   const navRef = useRef(null)
   const sentinalRef = useRef([])
+  const { theme, setTheme } = useTheme()
+  const [hasMounted, setHasMounted] = useState(false)
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
   const handler = ([entry]) => {
     if (navRef && navRef.current && useSticky) {
       if (!entry.isIntersecting && entry !== undefined) {
