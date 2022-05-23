@@ -97,9 +97,8 @@ const Header = ({ navBarTitle, fullWidth }) => {
                       <stop offset="1" stopColor="#fbb217" stopOpacity="0" />
                     </radialGradient>
                   </defs>
-                </svg>
+                </svg> {BLOG.title}
               </div>
-              山顶洞人
             </a>
           </Link>
           {navBarTitle
