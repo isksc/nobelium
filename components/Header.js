@@ -1,7 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { IoSunnyOutline, IoMoonSharp } from 'react-icons/io5'
-import { useTheme } from 'next-themes'
 import BLOG from '@/blog.config'
 import { useLocale } from '@/lib/locale'
 
