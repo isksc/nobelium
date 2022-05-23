@@ -68,7 +68,7 @@ const Header = ({ navBarTitle, fullWidth }) => {
         ref={navRef}
       >
         <div className="flex items-center">
-          <Link href="/">
+          <Link href="https://www.shancn.com">
             <a aria-label={BLOG.title}>
               <div className="h-6">
                 <svg
@@ -99,6 +99,7 @@ const Header = ({ navBarTitle, fullWidth }) => {
                   </defs>
                 </svg>
               </div>
+              山顶洞人
             </a>
           </Link>
           {navBarTitle
