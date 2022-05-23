@@ -69,9 +69,11 @@ const Header = ({ navBarTitle, fullWidth }) => {
       >
         <div className="flex items-center">
           <Link href="https://www.shancn.com">
-            <a aria-label={BLOG.title}>
-              💫
-              {BLOG.title}
+            <a
+              className='md:text-lg text-base text-black dark:text-white'
+              aria-label={BLOG.title}
+            >
+              💫 {BLOG.title}
             </a>
           </Link>
           {navBarTitle
@@ -88,6 +90,19 @@ const Header = ({ navBarTitle, fullWidth }) => {
               )}
         </div>
         <NavBar />
+        <div>
+          <a
+            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+            title={`Toggle dark mode - current ${theme}`}
+            className='hover:text-blue-400 cursor-pointer text-xl'
+          >
+            {hasMounted && theme === 'dark' ? (
+              <IoMoonSharp />
+            ) : (
+              <IoSunnyOutline />
+            )}
+          </a>
+        </div>
       </div>
     </>
   )
