@@ -39,11 +39,6 @@ const Header = ({ navBarTitle, fullWidth }) => {
   const useSticky = !BLOG.autoCollapsedNavBar
   const navRef = useRef(null)
   const sentinalRef = useRef([])
-  const { theme, setTheme } = useTheme()
-  const [hasMounted, setHasMounted] = useState(false)
-  useEffect(() => {
-    setHasMounted(true)
-  }, [])
   const handler = ([entry]) => {
     if (navRef && navRef.current && useSticky) {
       if (!entry.isIntersecting && entry !== undefined) {
@@ -75,38 +70,25 @@ const Header = ({ navBarTitle, fullWidth }) => {
         ref={navRef}
       >
         <div className="flex items-center">
-          <Link href="https://www.shancn.com">
-            <a
-              className="md:text-lg text-base text-black dark:text-white"
-              aria-label={BLOG.title}
-            >
+          <Link href="/">
+            <a className='md:text-lg text-base text-black dark:text-white' aria-label={BLOG.title}>
               💫 {BLOG.title}
             </a>
           </Link>
-          {navBarTitle ? (
-            <p className='ml-2 font-medium text-day dark:text-night header-name'>
+          {navBarTitle
+            ? (
+            <p className="ml-2 font-medium text-day dark:text-night header-name">
               {navBarTitle}
             </p>
-          ) : (
-            <p className='ml-2 font-medium text-day dark:text-night header-name'>
-              <span className='font-normal'>{BLOG.description}</span>
+              )
+            : (
+            <p className="ml-2 font-medium text-day dark:text-night header-name">
+              {BLOG.title},{' '}
+              <span className="font-normal">{BLOG.description}</span>
             </p>
-          )}
+              )}
         </div>
         <NavBar />
-        <div>
-          <a
-            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-            title={`Toggle dark mode - current ${theme}`}
-            className='hover:text-blue-400 cursor-pointer text-xl'
-          >
-            {hasMounted && theme === 'dark' ? (
-              <IoMoonSharp />
-            ) : (
-              <IoSunnyOutline />
-            )}
-          </a>
-        </div>
       </div>
     </>
   )
