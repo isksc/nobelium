@@ -9,7 +9,7 @@ const NavBar = () => {
     { id: 0, name: locale.NAV.INDEX, to: BLOG.path || '/', show: true },
     { id: 1, name: locale.NAV.ABOUT, to: '/about', show: BLOG.showAbout },
     { id: 2, name: locale.NAV.SEARCH, to: '/search', show: true },
-    { id: 3, name: locale.NAV.Navigation, to: '/Navigation', show: true },
+    { id: 3, name: locale.NAV.Navigation, to: 'https://www.shancn.com', show: true },
     { id: 4, name: locale.NAV.RSS, to: '/feed', show: true }
   ]
   return (
@@ -68,9 +68,9 @@ const Header = ({ navBarTitle, fullWidth }) => {
         ref={navRef}
       >
         <div className="flex items-center">
-          <Link href="https://www.shancn.com">
+          <Link href="/">
             <a className='md:text-lg text-base text-black dark:text-white' aria-label={BLOG.title}>
-              💫
+              💫 首页
             </a>
           </Link>
           {navBarTitle
